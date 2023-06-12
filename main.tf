@@ -15,7 +15,7 @@ resource "aws_ecs_task_definition" "terra-docker" {
   [
     {
       "name": "terra-docker",
-      "image": "041952152622.dkr.ecr.us-east-1.amazonaws.com/terra-repo:latest",
+      "image": "${aws_ecr_repository.terra-repo.repository_url}",
       "essential": true,
       "portMappings": [
         {
